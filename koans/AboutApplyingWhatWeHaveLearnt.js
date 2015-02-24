@@ -42,7 +42,7 @@ describe("About Applying What We Have Learnt", function() {
       /* solve using filter() & all() / any() */
       productsICanEat = _(products).filter( function(x) { return !x.containsNuts } );
       productsICanEat = _(productsICanEat).filter( function(x) { 
-        return !_(x.ingredients).any( function(y) { return y=="mushrooms"; } )
+        return !_(x.ingredients).any( function(y) { return y==="mushrooms"; } )
       });
 
       expect(productsICanEat.length).toBe(1);
@@ -89,7 +89,7 @@ describe("About Applying What We Have Learnt", function() {
         }
     }
 
-    expect(ingredientCount['mushrooms']).toBe(2);
+    expect(ingredientCount.mushrooms).toBe(2);
   });
 
   it("should count the ingredient occurrence (functional)", function () {
